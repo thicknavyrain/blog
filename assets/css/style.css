@@ -72,6 +72,16 @@ header {
   font-weight: 600;
   letter-spacing: 0.04em;
   text-transform: uppercase;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo img {
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  border: 1px solid color-mix(in srgb, var(--border), var(--accent) 25%);
 }
 
 .nav-links {
@@ -211,6 +221,11 @@ main {
   border-radius: 999px;
 }
 
+body.dark .badge {
+  color: #f6eff6;
+  background: rgba(112, 10, 109, 0.35);
+}
+
 .gallery-tile {
   display: grid;
   gap: 12px;
@@ -229,6 +244,15 @@ main {
   gap: 8px;
   color: var(--text);
   box-shadow: var(--shadow);
+}
+
+.tile-thumb {
+  width: 64px;
+  height: 64px;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+  object-fit: cover;
+  background: var(--bg);
 }
 
 .tile-image span {
