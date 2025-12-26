@@ -1,12 +1,12 @@
 :root {
   color-scheme: light dark;
-  --bg: #e1e0e1;
-  --text: #040003;
-  --muted: #939393;
-  --card: #fefefe;
-  --border: #b6b6b6;
-  --accent: #700a6d;
-  --accent-soft: rgba(112, 10, 109, 0.12);
+  --bg: #f8f7f4;
+  --text: #1c1c1c;
+  --muted: #5c5c5c;
+  --card: #ffffff;
+  --border: #dedbd4;
+  --accent: #1f4b3f;
+  --accent-soft: #e6f0ec;
   --shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
   --max-width: 1120px;
   --radius: 14px;
@@ -22,14 +22,14 @@ body {
 }
 
 body.dark {
-  --bg: #040003;
-  --text: #e1e0e1;
-  --muted: #b6b6b6;
-  --card: #0d000c;
-  --border: #700a6d;
-  --accent: #700a6d;
-  --accent-soft: rgba(112, 10, 109, 0.2);
-  --shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  --bg: #0f1110;
+  --text: #f0f0ea;
+  --muted: #b8b8b0;
+  --card: #151816;
+  --border: #2b2e2a;
+  --accent: #84c5a4;
+  --accent-soft: #1c2a23;
+  --shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
 }
 
 * {
@@ -215,20 +215,14 @@ main {
 }
 
 .tile-image {
-  background: linear-gradient(
-    135deg,
-    rgba(112, 10, 109, 0.25),
-    rgba(112, 10, 109, 0.7)
-  );
+  background: linear-gradient(135deg, rgba(31, 75, 63, 0.2), rgba(31, 75, 63, 0.6));
   border-radius: var(--radius);
   padding: 24px;
   min-height: 140px;
   border: 1px solid var(--border);
   display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: flex-end;
-  gap: 8px;
+  align-items: flex-end;
+  justify-content: space-between;
   color: #f7f7f3;
 }
 
