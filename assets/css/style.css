@@ -1,15 +1,15 @@
 :root {
   color-scheme: light dark;
-  --bg: #f8f7f4;
-  --text: #1c1c1c;
-  --muted: #5c5c5c;
-  --card: #ffffff;
-  --border: #dedbd4;
-  --accent: #1f4b3f;
-  --accent-soft: #e6f0ec;
-  --shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+  --bg: #e1e0e1;
+  --text: #040003;
+  --muted: #939393;
+  --card: #fefefe;
+  --border: #b6b6b6;
+  --accent: #700a6d;
+  --accent-soft: rgba(112, 10, 109, 0.12);
+  --shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
   --max-width: 1120px;
-  --radius: 14px;
+  --radius: 12px;
   --gap: 24px;
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   line-height: 1.6;
@@ -22,14 +22,14 @@ body {
 }
 
 body.dark {
-  --bg: #0f1110;
-  --text: #f0f0ea;
-  --muted: #b8b8b0;
-  --card: #151816;
-  --border: #2b2e2a;
-  --accent: #84c5a4;
-  --accent-soft: #1c2a23;
-  --shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+  --bg: #040003;
+  --text: #e1e0e1;
+  --muted: #b6b6b6;
+  --card: #0d000c;
+  --border: #700a6d;
+  --accent: #700a6d;
+  --accent-soft: rgba(112, 10, 109, 0.2);
+  --shadow: 0 8px 22px rgba(0, 0, 0, 0.45);
 }
 
 * {
@@ -72,6 +72,16 @@ header {
   font-weight: 600;
   letter-spacing: 0.04em;
   text-transform: uppercase;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo img {
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  border: 1px solid color-mix(in srgb, var(--border), var(--accent) 25%);
 }
 
 .nav-links {
@@ -128,6 +138,7 @@ main {
   gap: 12px;
   border-bottom: 1px solid var(--border);
   padding-bottom: 12px;
+  margin-bottom: 12px;
 }
 
 .section-title h2 {
@@ -146,6 +157,7 @@ main {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   gap: var(--gap);
+  margin-top: 6px;
 }
 
 .card {
@@ -209,36 +221,132 @@ main {
   border-radius: 999px;
 }
 
+body.dark .badge {
+  color: #f6eff6;
+  background: rgba(112, 10, 109, 0.35);
+}
+
 .gallery-tile {
   display: grid;
-  gap: 12px;
+  gap: 0;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--shadow);
 }
 
 .tile-image {
-  background: linear-gradient(135deg, rgba(31, 75, 63, 0.2), rgba(31, 75, 63, 0.6));
-  border-radius: var(--radius);
-  padding: 24px;
-  min-height: 140px;
-  border: 1px solid var(--border);
+  background: color-mix(in srgb, var(--card), var(--accent) 6%);
+  padding: 20px 22px;
+  min-height: 120px;
+  border: none;
   display: flex;
-  align-items: flex-end;
-  justify-content: space-between;
-  color: #f7f7f3;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-end;
+  gap: 8px;
+  color: var(--text);
+}
+
+.tile-thumb {
+  width: 64px;
+  height: 64px;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+  object-fit: cover;
+  background: var(--bg);
 }
 
 .tile-image span {
   font-size: 0.85rem;
   text-transform: uppercase;
-  letter-spacing: 0.12em;
+  letter-spacing: 0.08em;
+  color: var(--muted);
 }
 
 .caption {
-  border: 1px solid var(--border);
-  border-radius: 12px;
-  padding: 12px;
-  background: var(--card);
+  border: none;
+  border-top: 1px solid var(--border);
+  padding: 16px 22px 20px;
+  background: transparent;
   display: grid;
   gap: 8px;
+}
+
+.caption .item-link {
+  font-weight: 600;
+  color: var(--text);
+}
+
+.caption details {
+  color: var(--muted);
+}
+
+/* Tufte-inspired notes and figures */
+.page {
+  position: relative;
+}
+
+.marginnote,
+.sidenote {
+  float: right;
+  clear: right;
+  margin-right: -40%;
+  width: 32%;
+  font-size: 0.9rem;
+  line-height: 1.4;
+  color: var(--muted);
+}
+
+.sidenote-number,
+.sidenote-number::after {
+  font-size: 0.75em;
+}
+
+.sidenote-number {
+  vertical-align: super;
+}
+
+.sidenote-number::after {
+  content: "]";
+}
+
+.sidenote-number::before {
+  content: "[";
+}
+
+.margin-toggle {
+  display: none;
+}
+
+.sidenote,
+.marginnote {
+  position: relative;
+}
+
+.page figure {
+  margin: 24px 0;
+}
+
+.page figure figcaption {
+  font-size: 0.9rem;
+  color: var(--muted);
+  margin-top: 8px;
+}
+
+.fullwidth {
+  width: 100%;
+  margin-left: 0;
+}
+
+@media (max-width: 900px) {
+  .marginnote,
+  .sidenote {
+    float: none;
+    margin-right: 0;
+    width: 100%;
+  }
 }
 
 .caption details {
