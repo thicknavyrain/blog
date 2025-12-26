@@ -228,22 +228,25 @@ body.dark .badge {
 
 .gallery-tile {
   display: grid;
-  gap: 12px;
+  gap: 0;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--shadow);
 }
 
 .tile-image {
-  background: var(--card);
-  border-radius: var(--radius);
-  padding: 24px;
-  min-height: 140px;
-  border: 1px solid color-mix(in srgb, var(--border), var(--accent) 20%);
+  background: color-mix(in srgb, var(--card), var(--accent) 6%);
+  padding: 20px 22px;
+  min-height: 120px;
+  border: none;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   justify-content: flex-end;
   gap: 8px;
   color: var(--text);
-  box-shadow: var(--shadow);
 }
 
 .tile-thumb {
@@ -263,10 +266,10 @@ body.dark .badge {
 }
 
 .caption {
-  border: 1px solid var(--border);
-  border-radius: 12px;
-  padding: 12px;
-  background: var(--card);
+  border: none;
+  border-top: 1px solid var(--border);
+  padding: 16px 22px 20px;
+  background: transparent;
   display: grid;
   gap: 8px;
 }
