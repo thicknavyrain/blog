@@ -274,6 +274,81 @@ body.dark .badge {
   gap: 8px;
 }
 
+.caption .item-link {
+  font-weight: 600;
+  color: var(--text);
+}
+
+.caption details {
+  color: var(--muted);
+}
+
+/* Tufte-inspired notes and figures */
+.page {
+  position: relative;
+}
+
+.marginnote,
+.sidenote {
+  float: right;
+  clear: right;
+  margin-right: -40%;
+  width: 32%;
+  font-size: 0.9rem;
+  line-height: 1.4;
+  color: var(--muted);
+}
+
+.sidenote-number,
+.sidenote-number::after {
+  font-size: 0.75em;
+}
+
+.sidenote-number {
+  vertical-align: super;
+}
+
+.sidenote-number::after {
+  content: "]";
+}
+
+.sidenote-number::before {
+  content: "[";
+}
+
+.margin-toggle {
+  display: none;
+}
+
+.sidenote,
+.marginnote {
+  position: relative;
+}
+
+.page figure {
+  margin: 24px 0;
+}
+
+.page figure figcaption {
+  font-size: 0.9rem;
+  color: var(--muted);
+  margin-top: 8px;
+}
+
+.fullwidth {
+  width: 100%;
+  margin-left: 0;
+}
+
+@media (max-width: 900px) {
+  .marginnote,
+  .sidenote {
+    float: none;
+    margin-right: 0;
+    width: 100%;
+  }
+}
+
 .caption details {
   color: var(--muted);
 }

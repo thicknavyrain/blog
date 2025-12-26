@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Post Template 01 • Plain Vanilla Journal</title>
-    <link rel="stylesheet" href="../assets/css/style.css?v=5" />
+    <link rel="stylesheet" href="../assets/css/style.css?v=6" />
   </head>
   <body>
     <header>
@@ -37,6 +37,12 @@
         <p>
           Start with a short introduction. Keep paragraphs brief and readable. You
           can include inline code like <code>const note = "example";</code>.
+          Use Tufte-style footnotes for side commentary.<label class="margin-toggle sidenote-number" for="sn-1"></label>
+          <input class="margin-toggle" type="checkbox" id="sn-1" />
+          <span class="sidenote"
+            >This is a sidenote that sits in the margin on wide screens and drops
+            inline on small screens.</span
+          >
         </p>
 
         <h3>Subheading with list</h3>
@@ -72,6 +78,16 @@
           />
           <figcaption>
             Figure 1: A simple image embed with a descriptive caption.
+          </figcaption>
+        </figure>
+
+        <figure class="fullwidth">
+          <img
+            src="https://images.unsplash.com/photo-1473181488821-2d23949a045a?auto=format&fit=crop&w=1600&q=80"
+            alt="A wide landscape used for a full-width figure example."
+          />
+          <figcaption>
+            Full-width figure example inspired by the Tufte CSS layout.
           </figcaption>
         </figure>
 
@@ -117,6 +133,13 @@
         <p>
           Wrap up with a summary, next steps, or a call to action. Provide links to
           related posts or resources.
+          Add a marginal note for extra context.<label class="margin-toggle" for="mn-1"
+            >&#8853;</label
+          >
+          <input class="margin-toggle" type="checkbox" id="mn-1" />
+          <span class="marginnote"
+            >Marginal notes are great for supplementary context or citations.</span
+          >
         </p>
       </article>
     </main>
@@ -125,6 +148,6 @@
       <p>Duplicate this template and replace content with your own post.</p>
     </footer>
 
-    <script src="../assets/js/theme.js?v=5"></script>
+    <script src="../assets/js/theme.js?v=6"></script>
   </body>
 </html>
