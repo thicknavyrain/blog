@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Post Template 01 • Plain Vanilla Journal</title>
+    <link rel="stylesheet" href="../assets/css/style.css?v=7" />
+  </head>
+  <body>
+    <header>
+      <nav class="nav">
+        <a class="logo" href="../index.html"><img src="../assets/images/logo-placeholder.svg" alt="Plain Vanilla Journal logo" />Plain Vanilla Journal</a>
+        <div class="nav-links">
+          <a href="../blog.html">Blog</a>
+          <a href="../writing.html">Writing</a>
+          <a href="../projects.html">Projects</a>
+          <a href="../publications.html">Publications</a>
+          <a href="../about.html">About</a>
+          <a href="../contact.html">Contact</a>
+        </div>
+        <button class="toggle" data-theme-toggle type="button">Dark mode</button>
+      </nav>
+    </header>
+
+    <main>
+      <article class="page">
+        <p class="kicker">Template</p>
+        <h1>Post Template 01</h1>
+        <p class="meta">Date • 8 min read • Tags: writing, research</p>
+        <p>
+          Use this layout for longform posts. It includes a variety of standard
+          elements you might find in a Jekyll theme: headings, lists, quotes, code
+          blocks, images, and tables.
+        </p>
+
+        <h2>Section heading</h2>
+        <p>
+          Start with a short introduction. Keep paragraphs brief and readable. You
+          can include inline code like <code>const note = "example";</code>.
+          Use Tufte-style footnotes for side commentary.<label class="margin-toggle sidenote-number" for="sn-1"></label>
+          <input class="margin-toggle" type="checkbox" id="sn-1" />
+          <span class="sidenote"
+            >This is a sidenote that sits in the margin on wide screens and drops
+            inline on small screens.</span
+          >
+        </p>
+
+        <h3>Subheading with list</h3>
+        <ul>
+          <li>Primary insight or thesis.</li>
+          <li>Supporting argument with context.</li>
+          <li>Closing thought or question.</li>
+        </ul>
+
+        <blockquote>
+          “A quiet interface can encourage a louder voice.” — Add quotes or pull
+          lines here.
+        </blockquote>
+
+        <p>
+          Reference works can live in the margin as linked sidenotes.<label
+            class="margin-toggle sidenote-number"
+            for="sn-ref-1"
+          ></label>
+          <input class="margin-toggle" type="checkbox" id="sn-ref-1" />
+          <span class="sidenote"
+            >See <a href="https://www.edwardtufte.com/tufte/books_vdqi" target="_blank" rel="noreferrer"
+              >The Visual Display of Quantitative Information</a
+            > for a foundational reference.</span
+          >
+        </p>
+
+        <h3>Code sample</h3>
+        <pre><code>function collectNotes(entries) {
+  return entries.filter(Boolean).map(entry => ({
+    title: entry.title,
+    excerpt: entry.body.slice(0, 140),
+  }));
+}
+</code></pre>
+
+        <h3>Inline media note</h3>
+        <p>
+          Add an image or figure reference here. You can drop a photo, illustration,
+          or data visualization inside the template.
+        </p>
+        <figure>
+          <img
+            src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?auto=format&fit=crop&w=1200&q=80"
+            alt="A desk with open notebooks and a cup of coffee."
+          />
+          <figcaption>
+            Figure 1: A simple image embed with a descriptive caption.
+          </figcaption>
+        </figure>
+
+        <p>
+          A margin figure can sit beside the text for quick visual context.
+          <label class="margin-toggle" for="mn-figure-1">&#8853;</label>
+          <input class="margin-toggle" type="checkbox" id="mn-figure-1" />
+          <span class="marginnote">
+            <img
+              src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=640&q=80"
+              alt="A margin figure example."
+            />
+            <span class="margin-caption">Margin figure with a short caption.</span>
+          </span>
+        </p>
+
+        <figure class="fullwidth">
+          <img
+            src="https://images.unsplash.com/photo-1473181488821-2d23949a045a?auto=format&fit=crop&w=1600&q=80"
+            alt="A wide landscape used for a full-width figure example."
+          />
+          <figcaption>
+            Full-width figure example inspired by the Tufte CSS layout.
+          </figcaption>
+        </figure>
+
+        <h3>Equation sample</h3>
+        <p><strong>Equation:</strong> E = mc<sup>2</sup></p>
+        <p>
+          For more complex math, you can use a preformatted block and render it with
+          your preferred math library later:
+        </p>
+        <pre><code>\\[
+\\int_{0}^{\\infty} e^{-x^2} dx = \\frac{\\sqrt{\\pi}}{2}
+\\]</code></pre>
+
+        <h3>Table sample</h3>
+        <table>
+          <thead>
+            <tr>
+              <th>Phase</th>
+              <th>Focus</th>
+              <th>Status</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Research</td>
+              <td>Collect archival sources</td>
+              <td>Complete</td>
+            </tr>
+            <tr>
+              <td>Drafting</td>
+              <td>Outline narrative</td>
+              <td>In progress</td>
+            </tr>
+            <tr>
+              <td>Revision</td>
+              <td>Peer review</td>
+              <td>Upcoming</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h2>Conclusion</h2>
+        <p>
+          Wrap up with a summary, next steps, or a call to action. Provide links to
+          related posts or resources.
+          Add a marginal note for extra context.<label class="margin-toggle" for="mn-1"
+            >&#8853;</label
+          >
+          <input class="margin-toggle" type="checkbox" id="mn-1" />
+          <span class="marginnote"
+            >Marginal notes are great for supplementary context or citations.</span
+          >
+        </p>
+      </article>
+    </main>
+
+    <footer class="footer">
+      <p>Duplicate this template and replace content with your own post.</p>
+    </footer>
+
+    <script src="../assets/js/theme.js?v=7"></script>
+  </body>
+</html>
