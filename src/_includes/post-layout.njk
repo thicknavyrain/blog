@@ -1,0 +1,9 @@
+{% include "header.html" %}
+<article class="page">
+  <p class="kicker">Blog</p>
+  <h1>{{ title }}</h1>
+  <p class="meta">{{ date }} • {{ readTime }} • Tags: {{ tags }}</p>
+
+  {{ content | safe }}
+</article>
+{% include "footer.html" %}
