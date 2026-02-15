@@ -85,8 +85,8 @@ header {
 }
 
 .logo img {
-  width: 32px;
-  height: 32px;
+  width: 96px;
+  height: 96px;
   border-radius: 8px;
   border: 1px solid color-mix(in srgb, var(--border), var(--accent) 25%);
 }
