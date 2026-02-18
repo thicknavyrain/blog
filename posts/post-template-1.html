@@ -4,12 +4,12 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Post Template 01 • Plain Vanilla Journal</title>
-    <link rel="stylesheet" href="../assets/css/style.css" />
+    <link rel="stylesheet" href="../assets/css/style.css?v=8" />
   </head>
   <body>
     <header>
       <nav class="nav">
-        <a class="logo" href="../index.html">Plain Vanilla Journal</a>
+        <a class="logo" href="../index.html"><img src="../assets/images/logo-placeholder.svg" alt="Plain Vanilla Journal logo" />Plain Vanilla Journal</a>
         <div class="nav-links">
           <a href="../blog.html">Blog</a>
           <a href="../writing.html">Writing</a>
@@ -37,6 +37,12 @@
         <p>
           Start with a short introduction. Keep paragraphs brief and readable. You
           can include inline code like <code>const note = "example";</code>.
+          Use Tufte-style footnotes for side commentary.<label class="margin-toggle sidenote-number" for="sn-1"></label>
+          <input class="margin-toggle" type="checkbox" id="sn-1" />
+          <span class="sidenote"
+            >This is a sidenote that sits in the margin on wide screens and drops
+            inline on small screens.</span
+          >
         </p>
 
         <h3>Subheading with list</h3>
@@ -50,6 +56,25 @@
           “A quiet interface can encourage a louder voice.” — Add quotes or pull
           lines here.
         </blockquote>
+
+        <p>
+          Reference works can live in the margin as linked sidenotes.<label
+            class="margin-toggle sidenote-number"
+            for="sn-ref-1"
+          ></label>
+          <input class="margin-toggle" type="checkbox" id="sn-ref-1" />
+          <span class="sidenote"
+            >See <a href="https://www.edwardtufte.com/tufte/books_vdqi" target="_blank" rel="noreferrer"
+              >The Visual Display of Quantitative Information</a
+            > for a foundational reference.</span
+          >
+        </p>
+        <p>
+          This sentence includes a numbered footnote reference<sup class="footnote-ref">1</sup>.
+          <span class="sidenote footnote-note">
+            <span class="footnote-index">1.</span>Example of a numbered reference note in the margin.
+          </span>
+        </p>
 
         <h3>Code sample</h3>
         <pre><code>function collectNotes(entries) {
@@ -65,6 +90,48 @@
           Add an image or figure reference here. You can drop a photo, illustration,
           or data visualization inside the template.
         </p>
+        <figure>
+          <figcaption>
+            Figure 1: A simple image embed with a descriptive caption.
+          </figcaption>
+          <img
+            src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?auto=format&fit=crop&w=1200&q=80"
+            alt="A desk with open notebooks and a cup of coffee."
+          />
+        </figure>
+
+        <p>
+          A margin figure can sit beside the text for quick visual context.
+          <label class="margin-toggle" for="mn-figure-1">&#8853;</label>
+          <input class="margin-toggle" type="checkbox" id="mn-figure-1" />
+          <span class="marginnote">
+            <img
+              src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=640&q=80"
+              alt="A margin figure example."
+            />
+            <span class="margin-caption">Margin figure with a short caption.</span>
+          </span>
+        </p>
+
+        <figure class="fullwidth">
+          <img
+            src="https://images.unsplash.com/photo-1473181488821-2d23949a045a?auto=format&fit=crop&w=1600&q=80"
+            alt="A wide landscape used for a full-width figure example."
+          />
+          <figcaption>
+            Full-width figure example inspired by the Tufte CSS layout.
+          </figcaption>
+        </figure>
+
+        <h3>Equation sample</h3>
+        <p><strong>Equation:</strong> E = mc<sup>2</sup></p>
+        <p>
+          For more complex math, you can use a preformatted block and render it with
+          your preferred math library later:
+        </p>
+        <pre><code>\\[
+\\int_{0}^{\\infty} e^{-x^2} dx = \\frac{\\sqrt{\\pi}}{2}
+\\]</code></pre>
 
         <h3>Table sample</h3>
         <table>
@@ -98,6 +165,13 @@
         <p>
           Wrap up with a summary, next steps, or a call to action. Provide links to
           related posts or resources.
+          Add a marginal note for extra context.<label class="margin-toggle" for="mn-1"
+            >&#8853;</label
+          >
+          <input class="margin-toggle" type="checkbox" id="mn-1" />
+          <span class="marginnote"
+            >Marginal notes are great for supplementary context or citations.</span
+          >
         </p>
       </article>
     </main>
@@ -106,6 +180,6 @@
       <p>Duplicate this template and replace content with your own post.</p>
     </footer>
 
-    <script src="../assets/js/theme.js"></script>
+    <script src="../assets/js/theme.js?v=8"></script>
   </body>
 </html>
