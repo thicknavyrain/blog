@@ -11,7 +11,9 @@
   --border-strong: #8f8b8f;
   --accent: #700a6d;
   --accent-soft: rgba(112, 10, 109, 0.12);
+  --link-inline: var(--accent);
   --shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
+  --header-banner: url("/assets/images/taylor_cosine_banner_light.svg");
   --max-width: 1120px;
   --radius: 12px;
   --gap: 24px;
@@ -36,7 +38,9 @@ body.dark {
   --border-strong: #553452;
   --accent: #700a6d;
   --accent-soft: rgba(112, 10, 109, 0.2);
+  --link-inline: color-mix(in srgb, var(--accent) 38%, white 62%);
   --shadow: none;
+  --header-banner: url("/assets/images/taylor_cosine_banner_dark.svg");
 }
 
 * {
@@ -52,6 +56,18 @@ a:hover {
   color: var(--accent);
 }
 
+.page :is(p, li) a {
+  color: var(--link-inline);
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 3px;
+  font-weight: 600;
+}
+
+.page :is(p, li) a:hover {
+  background: var(--accent-soft);
+}
+
 img {
   max-width: 100%;
   display: block;
@@ -59,10 +75,18 @@ img {
 
 header {
   border-bottom: 1px solid var(--border-strong);
-  background: var(--card);
+  background-color: var(--card);
+  background-image: linear-gradient(rgba(255, 255, 255, 0.62), rgba(255, 255, 255, 0.62)), var(--header-banner);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
   position: sticky;
   top: 0;
   z-index: 10;
+}
+
+body.dark header {
+  background-image: linear-gradient(rgba(4, 0, 3, 0.55), rgba(4, 0, 3, 0.55)), var(--header-banner);
 }
 
 .nav {
@@ -77,6 +101,7 @@ header {
 
 .logo {
   font-weight: 600;
+  font-size: calc(1rem + 2pt);
   letter-spacing: 0.04em;
   text-transform: uppercase;
   display: inline-flex;
@@ -95,7 +120,11 @@ header {
   display: flex;
   flex-wrap: wrap;
   gap: 16px;
-  font-size: 0.95rem;
+  font-size: calc(0.95rem + 2pt);
+}
+
+.nav-links a {
+  font-weight: 700;
 }
 
 .toggle {
