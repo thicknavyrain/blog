@@ -182,6 +182,15 @@ main {
   font-size: 1.4rem;
 }
 
+.section-meta {
+  display: inline-block;
+  margin-bottom: 12px;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--muted);
+}
+
 h1,
 h2,
 h3,
@@ -331,19 +340,30 @@ body.dark .badge {
 
 /* Tufte-inspired notes and figures */
 .page {
+  --sidenote-width: 240px;
+  --sidenote-column-gap: 60px;
+  --sidenote-offset: calc(var(--sidenote-width) + var(--sidenote-column-gap));
+  --sidenote-gap: 16px;
   position: relative;
   overflow: visible;
   max-width: 760px;
   margin: 0 auto;
 }
 
+.sidenote-anchor {
+  display: inline-block;
+  width: 0;
+  height: 1em;
+  vertical-align: baseline;
+}
+
 .marginnote,
 .sidenote {
   float: right;
   clear: right;
-  margin-right: -300px;
-  width: 240px;
-  margin-bottom: 16px;
+  margin-right: calc(var(--sidenote-offset) * -1);
+  width: var(--sidenote-width);
+  margin-bottom: var(--sidenote-gap);
   font-size: 0.9rem;
   line-height: 1.4;
   color: var(--muted-strong);
@@ -396,6 +416,28 @@ body.dark .badge {
   display: none;
 }
 
+.page--sidenotes-enhanced .sidenote {
+  position: absolute;
+  top: 0;
+  left: calc(100% + var(--sidenote-column-gap));
+  right: auto;
+  margin: 0;
+  float: none;
+  clear: none;
+}
+
+.page--sidenotes-enhanced .sidenote--scrollable {
+  overflow-x: hidden;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  padding: 12px 14px;
+  border: 1px solid var(--border-strong);
+  border-radius: 10px;
+  background: color-mix(in srgb, var(--card) 88%, var(--bg) 12%);
+  box-shadow: var(--shadow);
+  scrollbar-gutter: stable;
+}
+
 .page figure {
   margin: 24px 0;
   clear: both;
@@ -404,8 +446,8 @@ body.dark .badge {
 .page figure figcaption {
   float: right;
   clear: right;
-  margin-right: -300px;
-  width: 240px;
+  margin-right: calc(var(--sidenote-offset) * -1);
+  width: var(--sidenote-width);
   font-size: 0.9rem;
   color: var(--muted-strong);
   margin-top: 0;
@@ -425,14 +467,16 @@ body.dark .badge {
 
 @media (max-width: 1100px) {
   .page {
+    --sidenote-width: 200px;
+    --sidenote-column-gap: 20px;
     max-width: 680px;
   }
 
   .marginnote,
   .sidenote,
   .page figure figcaption {
-    margin-right: -220px;
-    width: 200px;
+    margin-right: calc(var(--sidenote-offset) * -1);
+    width: var(--sidenote-width);
   }
 
   .fullwidth {
@@ -444,6 +488,10 @@ body.dark .badge {
 @media (max-width: 900px) {
   .page {
     max-width: 100%;
+  }
+
+  .sidenote-anchor {
+    display: none;
   }
 
   .marginnote,
@@ -471,6 +519,40 @@ body.dark .badge {
 
 .caption a {
   font-weight: 600;
+}
+
+.sort-controls {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.sort-button {
+  border: 1px solid var(--border-strong);
+  background: var(--card);
+  color: var(--text);
+  padding: 6px 12px;
+  border-radius: 999px;
+  cursor: pointer;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+
+.sort-button.is-active {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #ffffff;
+}
+
+.writing-empty {
+  margin: 0;
+  padding: 16px;
+  border: 1px dashed var(--border-strong);
+  border-radius: var(--radius);
+  background: var(--card);
+  color: var(--muted);
 }
 
 .page {
@@ -538,5 +620,10 @@ body:not(.dark) .gallery-tile {
 
   .hero {
     padding: 28px;
+  }
+
+  .section-title {
+    align-items: flex-start;
+    flex-direction: column;
   }
 }

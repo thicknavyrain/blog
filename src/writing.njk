@@ -1,0 +1,109 @@
+---
+title: Writing Portfolio
+permalink: /writing/
+pageScripts:
+  - /assets/js/writing-sort.js?v=1
+---
+{% include "header.html" %}
+<section class="hero">
+  <span class="badge">Writing Gallery</span>
+  <h1>Science Communication</h1>
+  <p>
+    My professional science communication work has primarily been as a credited
+    script writer for high-profile YouTube channels such as SciShow, Crash
+    Course, and Veritasium, which have cumulatively attracted over 60 million
+    views. I have written on a broad field of topics from the history of
+    technology to nanophysics, infectious disease epidemiology, archaeology, and
+    AI safety. I have also worked extensively with Arizona State University
+    creating freely available undergraduate study materials on math, coding, and
+    statistics as part of Study Hall, through which viewers can earn
+    <b><u><a href="https://gostudyhall.com/">real US college credit</a></u></b>.
+    <br /><br />
+    As part of my broader <b><u><a href="/non-fiction/">non-fiction</a></u></b>
+    portfolio, I am currently working on a book proposal, supported by my
+    <b
+      ><u
+        ><a
+          href="https://www.londonwriterscentre.org.uk/news/announcing-the-winners-of-the-2025-wellcome-collection-non-fiction-awards/"
+          >2025 Wellcome Collection Non Fiction Award</a
+        ></u
+      ></b
+    >. My book is represented by Sally Holloway at
+    <b
+      ><u
+        ><a href="https://felicitybryan.com/fba-author/ricky-nathvani/"
+          >Felicity Bryan Associates</a
+        ></u
+      ></b
+    >. I have also given talks at schools, museums (including the Science
+    Museum), and science fairs.
+    <br /><br />
+    I also dabble in <b><u><a href="/fiction/">fiction writing</a></u></b>.
+  </p>
+</section>
+
+<section>
+  <div class="section-title">
+    <h2>Highlight Reel</h2>
+  </div>
+  {% if writing.highlightReel.length %}
+  <div class="grid">
+    {% for item in writing.highlightReel %}
+    <div class="gallery-tile">
+      <a class="tile-image" href="{{ item.url }}" target="_blank" rel="noreferrer">
+        <img class="tile-thumb" src="{{ item.thumbnail }}" alt="Thumbnail for {{ item.title }}" />
+        <span>Video</span>
+        <strong>{{ item.title }}</strong>
+      </a>
+      <div class="caption">
+        <p>{{ item.channel }}<br />{{ item.viewsLabel }}</p>
+        <details>
+          <summary>More</summary>
+          <p>{{ item.description or "Description coming soon." }}</p>
+        </details>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+  {% else %}
+  <p class="writing-empty">
+    Add one-based row numbers to <code>data/highlight_reel_rows.txt</code> to
+    populate this section.
+  </p>
+  {% endif %}
+</section>
+
+<section>
+  <div class="section-title">
+    <h2>Full writing portfolio</h2>
+    <div class="sort-controls" role="group" aria-label="Sort full writing portfolio">
+      <button class="sort-button is-active" type="button" data-writing-sort="views">Most viewed</button>
+      <button class="sort-button" type="button" data-writing-sort="recent">Most recent</button>
+    </div>
+  </div>
+  <div class="grid" data-writing-grid>
+    {% for item in writing.portfolio %}
+    <div
+      class="gallery-tile"
+      data-views="{{ item.views }}"
+      data-upload-date="{{ item.uploadDate }}"
+      data-row-number="{{ item.rowNumber }}"
+    >
+      <a class="tile-image" href="{{ item.url }}" target="_blank" rel="noreferrer">
+        <img class="tile-thumb" src="{{ item.thumbnail }}" alt="Thumbnail for {{ item.title }}" />
+        <span>Video</span>
+        <strong>{{ item.title }}</strong>
+      </a>
+      <div class="caption">
+        <p>{{ item.channel }}<br />{{ item.viewsLabel }}</p>
+        <details>
+          <summary>More</summary>
+          <p>{{ item.description or "Description coming soon." }}</p>
+        </details>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</section>
+
+{% include "footer.html" %}

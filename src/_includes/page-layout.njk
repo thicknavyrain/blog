@@ -1,0 +1,12 @@
+{% include "header.html" %}
+<section class="page{% if pageClass %} {{ pageClass }}{% endif %}">
+  {% if kicker %}
+  <p class="kicker">{{ kicker }}</p>
+  {% endif %}
+  {% if pageHeading %}
+  <h1>{{ pageHeading }}</h1>
+  {% endif %}
+
+  {{ content | safe }}
+</section>
+{% include "footer.html" %}

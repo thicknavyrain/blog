@@ -1,0 +1,39 @@
+---
+title: Blog
+permalink: /blog/
+---
+{% include "header.html" %}
+<section class="hero">
+  <span class="badge">Blog</span>
+  <h1>Notes, essays, thoughts and the like.</h1>
+  <p>
+    A collection of old blog posts archived from my previous website. New content coming soon.
+  </p> 
+</section>
+
+<section>
+  <div class="section-title">
+    <h2>Most Recent Posts</h2>
+    <span class="tag">Blog reel</span>
+  </div>
+
+  {% if collections.blogPosts.length %}
+  <div class="list">
+    {% for post in collections.blogPosts %}
+    <article class="post-preview">
+      <span class="badge">Post</span>
+      <h3><a href="{{ post.url }}">{{ post.data.title }}</a></h3>
+      <p class="meta">
+        {{ post.data.date | formatPostDate }} • {{ post.templateContent |
+        readTimeFromContent }}
+      </p>
+      <p class="excerpt">{{ post.templateContent | excerptFromContent(34) }}</p>
+    </article>
+    {% endfor %}
+  </div>
+  {% else %}
+  <p class="writing-empty">No posts found in <code>src/posts</code>.</p>
+  {% endif %}
+</section>
+
+{% include "footer.html" %}

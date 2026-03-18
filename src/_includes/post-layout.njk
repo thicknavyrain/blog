@@ -1,8 +1,12 @@
+{% set pageScripts = (pageScripts or []).concat(["/assets/js/sidenotes.js?v=1"]) %}
 {% include "header.html" %}
 <article class="page">
   <p class="kicker">Blog</p>
   <h1>{{ title }}</h1>
-  <p class="meta">{{ date }} • {{ readTime }} • Tags: {{ tags }}</p>
+  <p class="meta">
+    {{ date | formatPostDate }} • {{ content | readTimeFromContent }}{% if tags %} •
+    Tags: {{ tags }}{% endif %}
+  </p>
 
   {{ content | safe }}
 </article>

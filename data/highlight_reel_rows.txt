@@ -1,0 +1,10 @@
+# One-based row numbers from data/video_data.csv (excluding header).
+# Edit this file to manually curate the Highlight Reel on /writing/.
+17
+52
+92
+29
+6
+39   
+18
+80
