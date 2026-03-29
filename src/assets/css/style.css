@@ -93,10 +93,10 @@ body.dark header {
   max-width: var(--max-width);
   margin: 0 auto;
   padding: 18px 24px;
-  display: flex;
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
   align-items: center;
-  justify-content: space-between;
-  gap: var(--gap);
+  gap: 18px var(--gap);
 }
 
 .logo {
@@ -107,6 +107,11 @@ body.dark header {
   display: inline-flex;
   align-items: center;
   gap: 10px;
+  min-width: 0;
+}
+
+.logo-text {
+  display: block;
 }
 
 .logo img {
@@ -119,7 +124,10 @@ body.dark header {
 .nav-links {
   display: flex;
   flex-wrap: wrap;
+  justify-content: flex-end;
+  align-items: center;
   gap: 16px;
+  min-width: 0;
   font-size: calc(0.95rem + 2pt);
 }
 
@@ -135,6 +143,8 @@ body.dark header {
   border-radius: 999px;
   cursor: pointer;
   font-size: 0.85rem;
+  justify-self: end;
+  white-space: nowrap;
 }
 
 main {
@@ -342,6 +352,7 @@ body.dark .badge {
 .page {
   --sidenote-width: 240px;
   --sidenote-column-gap: 60px;
+  --margin-column-left: calc(100% + var(--sidenote-column-gap));
   --sidenote-offset: calc(var(--sidenote-width) + var(--sidenote-column-gap));
   --sidenote-gap: 16px;
   position: relative;
@@ -416,10 +427,11 @@ body.dark .badge {
   display: none;
 }
 
-.page--sidenotes-enhanced .sidenote {
+.page--sidenotes-enhanced .sidenote,
+.page--sidenotes-enhanced figure:not(.fullwidth) figcaption {
   position: absolute;
   top: 0;
-  left: calc(100% + var(--sidenote-column-gap));
+  left: var(--margin-column-left);
   right: auto;
   margin: 0;
   float: none;
@@ -486,6 +498,24 @@ body.dark .badge {
 }
 
 @media (max-width: 900px) {
+  main {
+    padding: 40px 18px 64px;
+    gap: 40px;
+  }
+
+  .hero {
+    padding: 28px;
+  }
+
+  .post-preview,
+  .card {
+    padding: 20px;
+  }
+
+  .caption {
+    padding: 16px 18px 18px;
+  }
+
   .page {
     max-width: 100%;
   }
@@ -600,6 +630,12 @@ body.dark .badge {
   text-align: left;
 }
 
+@media (max-width: 900px) {
+  .page {
+    padding: 28px;
+  }
+}
+
 .footer {
   border-top: 1px solid var(--border-strong);
   padding: 24px;
@@ -613,13 +649,83 @@ body:not(.dark) .gallery-tile {
 }
 
 @media (max-width: 720px) {
+  header {
+    --mobile-nav-padding-top: 10px;
+    --mobile-brand-row-height: 42px;
+    --mobile-nav-row-gap: 8px;
+    top: calc(
+      -1 * (
+        var(--mobile-nav-padding-top) +
+        var(--mobile-brand-row-height) +
+        var(--mobile-nav-row-gap)
+      )
+    );
+  }
+
   .nav {
-    flex-direction: column;
-    align-items: flex-start;
+    padding: var(--mobile-nav-padding-top) 14px 10px;
+    grid-template-columns: minmax(0, 1fr) auto;
+    align-items: center;
+    gap: var(--mobile-nav-row-gap) 12px;
+  }
+
+  .logo {
+    grid-column: 1 / -1;
+    grid-row: 1;
+    min-height: var(--mobile-brand-row-height);
+    font-size: 0.82rem;
+    letter-spacing: 0.03em;
+    white-space: nowrap;
+  }
+
+  .logo img {
+    width: 42px;
+    height: 42px;
+  }
+
+  .nav-links {
+    grid-column: 1 / 2;
+    grid-row: 2;
+    justify-content: flex-start;
+    gap: 6px 10px;
+    font-size: 0.88rem;
+    line-height: 1.25;
+  }
+
+  .toggle {
+    grid-column: 2 / 3;
+    grid-row: 2;
+    align-self: start;
+    padding: 5px 10px;
+    font-size: 0.75rem;
+  }
+
+  main {
+    padding: 28px 14px 56px;
+    gap: 32px;
   }
 
   .hero {
-    padding: 28px;
+    padding: 24px 18px;
+  }
+
+  .page {
+    padding: 24px 18px;
+    border-radius: 10px;
+  }
+
+  .post-preview,
+  .card {
+    padding: 18px 16px;
+    border-radius: 10px;
+  }
+
+  .tile-image {
+    padding: 10px 10px 12px;
+  }
+
+  .caption {
+    padding: 16px;
   }
 
   .section-title {
