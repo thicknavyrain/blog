@@ -1,0 +1,62 @@
+---
+pagination:
+  data: publications.portfolio
+  size: 1
+  alias: paper
+permalink: "/publications/{{ paper.slug }}/"
+eleventyComputed:
+  title: "{{ paper.title }}"
+---
+{% include "header.html" %}
+<section class="page publication">
+  <p class="pub-backlink"><a href="/publications/">← All publications</a></p>
+
+  <p class="kicker">{{ paper.journal }}{% if paper.year %} · {{ paper.year }}{% endif %}</p>
+  <h1>{{ paper.title }}</h1>
+
+  <p class="pub-authors">{{ paper.authorsHtml | safe }}</p>
+  {% if paper.firstAuthorLabel %}
+  <p class="pub-firstauthor-note">
+    <span class="pub-firstauthor">*</span> {{ paper.firstAuthorLabel }}
+  </p>
+  {% endif %}
+
+  <figure class="pub-thumbnail">
+    <img src="{{ paper.thumbnail }}" alt="Thumbnail for {{ paper.title }}" />
+  </figure>
+
+  <p class="pub-cta-row">
+    <a class="pub-cta" href="{{ paper.paperUrl }}" target="_blank" rel="noreferrer">
+      Read the published paper &rarr;
+    </a>
+  </p>
+
+  {% if paper.writeupHtml %}
+  <div class="pub-writeup">
+    {{ paper.writeupHtml | safe }}
+  </div>
+  {% else %}
+  <div class="pub-writeup pub-writeup-empty">
+    <p>
+      A short write-up of this paper in my own words is on its way. In the
+      meantime, the official abstract is below and the full paper is linked
+      above.
+    </p>
+  </div>
+  {% endif %}
+
+  {% if paper.abstract %}
+  <details class="pub-abstract">
+    <summary>Official abstract</summary>
+    <p>{{ paper.abstract }}</p>
+  </details>
+  {% endif %}
+
+  {% if paper.doi %}
+  <p class="pub-doi">
+    DOI:
+    <a href="https://doi.org/{{ paper.doi }}" target="_blank" rel="noreferrer">{{ paper.doi }}</a>
+  </p>
+  {% endif %}
+</section>
+{% include "footer.html" %}

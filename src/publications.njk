@@ -1,0 +1,42 @@
+---
+title: Publications
+permalink: /publications/
+---
+{% include "header.html" %}
+<section class="hero">
+  <span class="badge">Publications</span>
+  <h1>Peer-reviewed research</h1>
+  <p>
+    My academic work spans urban environmental health, computer vision and deep
+    learning for cities, and (in an earlier life) theoretical and particle
+    physics. Each tile opens a short write-up of the paper in my own words, with
+    a link through to the published version.
+  </p>
+</section>
+
+<section>
+  <div class="section-title">
+    <h2>All publications</h2>
+    <span class="tag">Most recent first</span>
+  </div>
+  <div class="grid">
+    {% for paper in publications.portfolio %}
+    <div class="gallery-tile">
+      <a class="tile-image" href="/publications/{{ paper.slug }}/">
+        <img class="tile-thumb" src="{{ paper.thumbnail }}" alt="Thumbnail for {{ paper.title }}" />
+        <span>{% if paper.rickyFirst %}Paper · First author{% else %}Paper{% endif %}</span>
+        <strong>{{ paper.title }}</strong>
+      </a>
+      <div class="caption">
+        <p>{{ paper.journal }}<br />{{ paper.year }}</p>
+        <details>
+          <summary>Abstract</summary>
+          <p>{{ paper.abstract or "Abstract coming soon." }}</p>
+        </details>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</section>
+
+{% include "footer.html" %}

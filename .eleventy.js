@@ -82,6 +82,8 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addWatchTarget("video_data.csv");
   eleventyConfig.addWatchTarget("data/highlight_reel_rows.txt");
   eleventyConfig.addWatchTarget("highlight_reel_rows.txt");
+  eleventyConfig.addWatchTarget("data/My_papers.csv");
+  eleventyConfig.addWatchTarget("My_papers.csv");
   eleventyConfig.addFilter("formatPostDate", formatPostDate);
   eleventyConfig.addFilter("readTimeFromContent", (content) =>
     getReadTime(content, 240)
