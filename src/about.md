@@ -2,7 +2,7 @@
 layout: page-layout.njk
 title: About
 kicker: About
-pageHeading: At Zeroth Author
+pageHeading: About
 permalink: /about/
 ---
 
@@ -17,3 +17,17 @@ Use this page to share a brief biography, research interests, or creative practi
 ## Short biography
 
 Add a longer biography or CV summary here. You can include a list of organizations, awards, or recent projects.
+
+## Contact
+
+Add your preferred contact methods, social links, or a form embed here. Keep the details simple so readers can reach you quickly.
+
+### Email
+
+[hello@example.com](mailto:hello@example.com)
+
+### Elsewhere
+
+- [Newsletter](https://example.com)
+- [LinkedIn](https://example.com)
+- [Mastodon](https://example.com)

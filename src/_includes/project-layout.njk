@@ -1,0 +1,23 @@
+{% include "header.html" %}
+<article class="page project">
+  <p class="pub-backlink"><a href="/projects/">&larr; All projects</a></p>
+
+  <p class="kicker">{{ category }}{% if org %} &middot; {{ org }}{% endif %}{% if date %} &middot; {{ date | formatPostDate }}{% endif %}</p>
+  <h1>{{ title }}</h1>
+
+  <img class="project-hero" src="{{ thumbnail | assetOrPlaceholder }}" alt="{{ title }}" />
+
+  {{ content | safe }}
+
+  {% if links %}
+  <div class="project-links">
+    <h2>Links</h2>
+    <ul>
+      {% for link in links %}
+      <li><a href="{{ link.url }}" target="_blank" rel="noreferrer">{{ link.label }}</a></li>
+      {% endfor %}
+    </ul>
+  </div>
+  {% endif %}
+</article>
+{% include "footer.html" %}

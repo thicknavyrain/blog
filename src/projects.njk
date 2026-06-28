@@ -1,0 +1,41 @@
+---
+title: Projects
+permalink: /projects/
+---
+{% include "header.html" %}
+<section class="hero">
+  <span class="badge">Project Gallery</span>
+  <h1>Projects</h1>
+  <p>
+    A grab-bag of consulting, hackathons, volunteer research, and the occasional
+    gloriously silly hardware build. Newest first; each tile opens a short
+    write-up of what it was and what I actually did.
+  </p>
+</section>
+
+<section>
+  <div class="section-title">
+    <h2>All projects</h2>
+    <span class="tag">Most recent first</span>
+  </div>
+  <div class="grid">
+    {% for project in collections.projects %}
+    <div class="gallery-tile">
+      <a class="tile-image" href="{{ project.url }}">
+        <img class="tile-thumb" src="{{ project.data.thumbnail | assetOrPlaceholder }}" alt="Thumbnail for {{ project.data.title }}" />
+        <span>{{ project.data.category or "Project" }}</span>
+        <strong>{{ project.data.title }}</strong>
+      </a>
+      <div class="caption">
+        <p>{{ project.data.org }}<br />{{ project.data.date | formatPostDate }}</p>
+        <details>
+          <summary>More</summary>
+          <p>{{ project.data.summary or "Write-up coming soon." }}</p>
+        </details>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</section>
+
+{% include "footer.html" %}

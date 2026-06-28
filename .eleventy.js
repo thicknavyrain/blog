@@ -1,3 +1,4 @@
+const fs = require("fs");
 const path = require("path");
 
 const TEMPLATE_POST_FILES = new Set([
@@ -57,6 +58,25 @@ function formatPostDate(dateValue) {
     .replace(",", "");
 }
 
+function assetOrPlaceholder(assetPath, fallback = "/assets/images/thumb-placeholder.svg") {
+  const value = String(assetPath || "").trim();
+
+  if (!value) {
+    return fallback;
+  }
+
+  if (/^(https?:)?\/\//.test(value) || value.startsWith("data:")) {
+    return value;
+  }
+
+  const relativePath = value.replace(/^\/+/, "");
+  const sourcePath = relativePath.startsWith("assets/")
+    ? path.join(__dirname, "src", relativePath)
+    : path.join(__dirname, relativePath);
+
+  return fs.existsSync(sourcePath) ? value : fallback;
+}
+
 module.exports = function (eleventyConfig) {
   eleventyConfig.addShortcode("sidenote", function (content) {
     const page = this.page || {};
@@ -85,6 +105,7 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addWatchTarget("data/My_papers.csv");
   eleventyConfig.addWatchTarget("My_papers.csv");
   eleventyConfig.addFilter("formatPostDate", formatPostDate);
+  eleventyConfig.addFilter("assetOrPlaceholder", assetOrPlaceholder);
   eleventyConfig.addFilter("readTimeFromContent", (content) =>
     getReadTime(content, 240)
   );
@@ -133,6 +154,11 @@ module.exports = function (eleventyConfig) {
 
         return aSlug.localeCompare(bSlug);
       });
+  });
+  eleventyConfig.addCollection("projects", function (collectionApi) {
+    return collectionApi
+      .getFilteredByGlob("src/projects/*.md")
+      .sort((a, b) => new Date(b.data.date) - new Date(a.data.date));
   });
 
   return {
