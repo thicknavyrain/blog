@@ -7,7 +7,7 @@ tags: writing, research
 permalink: /posts/post-template-1.html
 ---
 
-Use this layout for longform posts. It includes a variety of standard elements you might find in a Jekyll theme: headings, lists, quotes, code blocks, images, and tables.
+<p class="lead">Use this layout for longform posts. It includes a variety of standard elements you might find in a Jekyll theme: headings, lists, quotes, code blocks, images, and tables.</p>
 
 ## Section heading
 
@@ -23,8 +23,8 @@ Start with a short introduction. Keep paragraphs brief and readable. You can inc
 
 Reference works can live in the margin as linked sidenotes.{% sidenote "See <a href='https://www.edwardtufte.com/tufte/books_vdqi' target='_blank' rel='noreferrer'>The Visual Display of Quantitative Information</a> for a foundational reference." %}
 
-This sentence includes a numbered footnote reference<sup class="footnote-ref">1</sup>.
-<span class="sidenote footnote-note"><span class="footnote-index">1.</span>Example of a numbered reference note in the margin.</span>
+This sentence includes a numbered footnote reference<sup class="footnote-ref">3</sup>.
+<span class="sidenote footnote-note"><span class="footnote-index">3.</span>Example of a numbered reference note in the margin.</span>
 
 ### Code sample
 

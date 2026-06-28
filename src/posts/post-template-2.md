@@ -7,7 +7,7 @@ tags: notes, interviews
 permalink: /posts/post-template-2/
 ---
 
-This template focuses on short sections, callouts, and footnote-style annotations.
+<p class="lead">This template focuses on short sections, callouts, and footnote-style annotations.</p>
 
 ## Quick intro
 

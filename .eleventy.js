@@ -59,12 +59,21 @@ function formatPostDate(dateValue) {
 
 module.exports = function (eleventyConfig) {
   eleventyConfig.addShortcode("sidenote", function (content) {
-    const id = "sn-" + Math.random().toString(36).substr(2, 9);
+    const page = this.page || {};
+    page.sidenoteCounter = (page.sidenoteCounter || 0) + 1;
+    const number = page.sidenoteCounter;
+    const source = page.inputPath || page.url || "page";
+    const sourceSlug = path
+      .basename(source, path.extname(source))
+      .replace(/[^a-zA-Z0-9_-]+/g, "-")
+      .toLowerCase();
+    const id = `${sourceSlug}-sn-${number}`;
+
     return `
-      <span class="sidenote-anchor" data-sidenote-anchor="${id}"></span>
-      <label class="margin-toggle sidenote-number" for="${id}"></label>
+      <span class="sidenote-anchor sidenote-number" data-sidenote-anchor="${id}">${number}</span>
+      <label class="margin-toggle sidenote-number" for="${id}">${number}</label>
       <input class="margin-toggle" type="checkbox" id="${id}" />
-      <span class="sidenote" data-sidenote-id="${id}">${content}</span>
+      <span class="sidenote" data-sidenote-id="${id}"><span class="sidenote-number">${number}</span>${content}</span>
     `;
   });
 
