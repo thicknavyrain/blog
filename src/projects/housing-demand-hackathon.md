@@ -6,7 +6,7 @@ permalink: /projects/housing-demand-hackathon/
 category: "Hackathon"
 org: "MHCLG · GDS · i.AI (Leeds)"
 summary: "Our team won an honorary mention (4th of 25) for forecasting future housing delivery and affordability — and its determinants — at local authority level."
-thumbnail: /assets/projects/housing-demand-hackathon.jpg
+thumbnail: /assets/projects/housing-demand-hackathon.png
 links:
   - label: "About the hackathon (MHCLG Digital blog)"
     url: https://mhclgdigital.blog.gov.uk/2025/05/14/unlocking-planning-innovation-150-brilliant-minds-collaborate-in-leeds/
@@ -14,14 +14,14 @@ links:
     url: https://github.com/thicknavyrain/EnW_housing_demand_forecast
 ---
 
-In spring 2025 I spent two intense days in Leeds at the **Local Government Innovation Hackathon** — 150 planners, technologists and civil servants, run by MHCLG together with the Government Digital Service and the Incubator for AI. There were four real-world problem statements on the table; ours was the meaty one: *predicting current and future housing demand*.
+In spring 2025 I spent two days in Leeds at the **Local Government Innovation Hackathon**: 150 planners, technologists and civil servants, run by MHCLG together with the Government Digital Service and the Incubator for AI. There were four real-world problem statements on the table of which my team selected *predicting current and future housing demand*.
 
-We took that and ran at it from the supply-and-affordability side: could we **forecast future housing delivery and affordability at local authority level**, and — more interestingly — say something about the *determinants*? Not just "here's a number", but "here are the levers and constraints that seem to drive whether homes actually get built where they're needed".
+We took that and ran at it from the supply-and-affordability side: could we **forecast future housing delivery and affordability at local authority level**, and maybe say something about the determinants?
 
 ## My bit
 
-This was very much a team effort with people I'd never met two days earlier, which is half the fun of a hackathon. I spent most of my time on the data and modelling: pulling together the local-authority-level inputs, getting a forecasting approach working under absurd time pressure, and trying to make the determinants interpretable rather than a black box — because for a planning audience, *why* matters as much as *what*. The other half of the time was the usual frantic hackathon ritual of turning a half-finished model into something you can actually stand up and explain to a judging panel.
+This was a team effort with people I met at the hackathon including local authority planners, NHS data scientists and UX designers. I spent my time on the core data and modelling of the forecast: pulling together the local-authority-level inputs, getting a forecasting approach working in less than a day, and trying to make the determinants interpretable using a pretty standard random forest + SHAP approach. Our presentation slides can be found [here](https://docs.google.com/presentation/d/1NA6qiYyJyKHl9m0e_91RrsJjsW1Uo9zHbKp1noH_16U/edit?usp=sharing).
 
 ## How it went
 
-Out of 25 teams we came away with an **honorary mention, finishing 4th** — which I was genuinely chuffed with given the standard in the room (the winning team built "Clio", an AI tool for surfacing a site's planning history). More than the placing, it was a rare chance to point the kind of modelling I usually do at urban data straight at a live policy problem, alongside people who actually run planning systems day to day. Highly recommend the genre.
+Out of 25 teams we came away with an **honorary mention, finishing 4th**, which we were pretty pleased with given some of the talent in the room. Would highly recommend attending such hackathons for the interested, if only to bump into some friendly faces from i.AI. 
