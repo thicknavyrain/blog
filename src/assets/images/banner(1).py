@@ -23,13 +23,15 @@ def ink_ramp(mode):
     if mode == "dark":
         stops = ["#5a3a6b", "#8e69a0", "#c2a0d6", "#e6d2f2"]
         main = "#caa3e2"
-        base_alpha = 0.62
+        base_alpha = 0.80   # was 0.62
+        cmin = 0.34         # lift the faint (low-order) end off the dark paper
     else:
         stops = ["#c9b6d3", "#9a76a8", "#6c3f74", "#4a2545"]
         main = "#4a2545"
-        base_alpha = 0.5
+        base_alpha = 0.72   # was 0.50
+        cmin = 0.30         # lift the palest curves off the cream
     cmap = mcolors.LinearSegmentedColormap.from_list(f"ink_{mode}", stops)
-    return cmap, main, base_alpha
+    return cmap, main, base_alpha, cmin
 
 def generate_banner(mode="dark"):
     """Generates the production SVG, a transparent PNG, and a paper preview PNG."""
@@ -39,12 +41,11 @@ def generate_banner(mode="dark"):
 
     fig, ax = plt.subplots(figsize=(16, 4))
 
-    cmap, main_curve_color, base_alpha = ink_ramp(mode)
-    color_range = np.linspace(0.0, 1.0, len(degrees))
+    cmap, main_curve_color, base_alpha, cmin = ink_ramp(mode)
+    color_range = np.linspace(cmin, 1.0, len(degrees))
     colors = cmap(color_range)
 
-    # poly_linewidth = 1.1   # was 2.6 — thin engraved line
-    poly_linewidth = 1.6    
+    poly_linewidth = 1.5   # was 1.1 — a touch bolder so the approximations read
     main_linewidth = 2.6   # was 8.5 — fine ink, not a slab
 
     # 1. Taylor expansions (same curves as before, new ink)
