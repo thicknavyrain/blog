@@ -1091,6 +1091,9 @@ figure.fullwidth {
 
 /* Project pages */
 .page.project {
+  --sidenote-column-gap: 24px;
+  --margin-note-align-adjust: 0px;
+  --margin-column-left: calc(100% + var(--sidenote-column-gap));
   max-width: 760px;
 }
 

@@ -4,7 +4,7 @@ title: "[]HatGPT"
 date: 2024-07-01
 permalink: /projects/hat-judge/
 category: "For fun"
-org: "Carington Hat Party"
+org: "Personal"
 summary: "A tablet clamped to a hard hat that ran real object-detection to 'judge' other people's hats and award them scores."
 thumbnail: /assets/projects/hat-judge.jpg
 # links:
