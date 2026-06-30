@@ -1112,6 +1112,15 @@ figure.fullwidth {
   font-size: 1.05rem;
 }
 
+.cos-mark { display: block; width: 93px; height: auto; color: var(--accent); }
+
+/* bare, centered — front-page sign-off & post end-mark */
+.mark-center { display: flex; justify-content: center; margin: 0; }
+
+/* flanked by hairlines — portfolio section divider */
+.mark-divider { display: flex; align-items: center; justify-content: center; gap: 16px; margin: 0; }
+.mark-divider .rule { height: 0; width: 80px; border-top: 1px solid var(--border-strong); opacity: 0.8; }
+
 @media print {
   body {
     background-image: none;
