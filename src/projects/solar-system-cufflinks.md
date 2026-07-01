@@ -15,6 +15,8 @@ For my wedding in 2023, as a gift to my Groomsfolk {% sidenote "Two of them were
 
 The original code for this was a Python script using `Skyfield` for the astronomical calculations {% sidenote "Which I had to wrangle from being a projection of each body's position in the sky to being their relative physical positions." %} to get the planets' positions with respect to each other. Opinions amongst the 'folk were divided as to whether to include the orbit of the moon as well, relative to the Earth, so that was an optional add-on for those who wanted it. 
 
+I checked the validity of the outputs using the Jet Propulsion Laboratory's [Orbit Viewer Tool](https://ssd.jpl.nasa.gov/tools/orbit_viewer.html) (which is absolutely worth having a play around with.)
+
 My friends picked dates special to them, from birthdays to anniversaries and even the date of the Moon landing. I would call it, humbly, a great success. Once I had the design as SVG files (pure black on transparent background) I used an Etsy supplier{% sidenote "I used [this particular one](https://www.etsy.com/uk/listing/1466235403/logo-cuff-links-photo-cufflinks), to whom I have no affiliation whatsoever, I'm sure this is a fairly generic business." %} who did custom engravings on cufflinks. In short, each cufflink is a special representation of a particular moment in time.
 
 Below, I've thrown together a JavaScript {% sidenote "I know, I can't keep this website pure CSS and HTML... :(" %} version which allows you to download your own versions in SVG form. 
