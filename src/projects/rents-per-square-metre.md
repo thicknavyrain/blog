@@ -30,4 +30,4 @@ Once you can see the price of space, the geography of it is pretty stark. Rent p
 
 In **seven in ten local authorities, one-bed flats cost *more* per square metre than three-beds**. Single renters are quietly paying a premium for every metre they occupy, on top of facing the highest overall cost of living.
 
-In other words, minimum space standards are identical across the country, but when the price of a square metre swings from £7 to £45, that single "minimum" means wildly different things depending on your postcode. The implication is that the priciest places sit out of reach of lower income communities the standards are meant to be protecting the welfare of. Getting the data right felt like the small, useful part I could play in making that visible.
+In other words, minimum space standards are identical across the country, but when the price of a square metre swings from £7 to £45, that single "minimum" means wildly different things depending on your postcode. The implication is that the priciest places sit out of reach of lower income communities the standards are meant to be protecting the welfare of. 
