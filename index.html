@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Plain Vanilla Blog Theme</title>
+    <link rel="stylesheet" href="assets/css/style.css?v=8" />
+  </head>
+  <body>
+    <header>
+      <nav class="nav">
+        <a class="logo" href="index.html"><img src="assets/images/logo-placeholder.svg" alt="Plain Vanilla Journal logo" />Plain Vanilla Journal</a>
+        <div class="nav-links">
+          <a href="blog.html">Blog</a>
+          <a href="writing.html">Writing</a>
+          <a href="projects.html">Projects</a>
+          <a href="publications.html">Publications</a>
+          <a href="about.html">About</a>
+          <a href="contact.html">Contact</a>
+        </div>
+        <button class="toggle" data-theme-toggle type="button">Dark mode</button>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero">
+        <span class="badge">Plain Vanilla Theme</span>
+        <h1>A quiet, structured home for writing, projects, and publication notes.</h1>
+        <p>
+          Inspired by plainvanillaweb.com, this theme keeps typography simple, layouts
+          modular, and pages easy to extend. Use the navigation to explore each
+          section and drop in new content when you are ready.
+        </p>
+      </section>
+
+      <section>
+        <div class="section-title">
+          <h2>Start Here</h2>
+          <span class="tag">Overview</span>
+        </div>
+        <div class="grid">
+          <a class="card" href="blog.html">
+            <h3>Blog</h3>
+            <p>Chronological entries, templates, and a post format playground.</p>
+            <span class="meta">Latest drafts →</span>
+          </a>
+          <a class="card" href="writing.html">
+            <h3>Writing Portfolio</h3>
+            <p>Curated writing samples displayed as a gallery.</p>
+            <span class="meta">External links →</span>
+          </a>
+          <a class="card" href="projects.html">
+            <h3>Projects</h3>
+            <p>Tile-based showcase with dedicated project detail pages.</p>
+            <span class="meta">Template pages →</span>
+          </a>
+          <a class="card" href="publications.html">
+            <h3>Publications</h3>
+            <p>Academic or professional publications with consistent templates.</p>
+            <span class="meta">Citation-friendly →</span>
+          </a>
+        </div>
+      </section>
+
+      <section class="page">
+        <p class="kicker">Design notes</p>
+        <h2>Plain and functional, with a simple dark mode</h2>
+        <p>
+          The layout uses modular CSS grid tiles so you can add, remove, or reorder
+          cards without adjusting the layout. Dark mode is a single class toggle that
+          respects <code>prefers-color-scheme</code> and keeps the palette restrained.
+        </p>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <p>Built with plain HTML, CSS, and a hint of vanilla JavaScript.</p>
+    </footer>
+
+    <script src="assets/js/theme.js?v=8"></script>
+  </body>
+</html>
